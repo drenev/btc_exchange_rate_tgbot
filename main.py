@@ -1,6 +1,7 @@
 import os
 import requests
 from aiogram import Bot, types
+from aiogram.types import Message
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils.executor import start_polling
 
@@ -10,6 +11,16 @@ TOKEN = os.environ.get("TOKEN")
 # Initialize the bot and dispatcher
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
+
+
+@dp.message_handler(commands=["help"])
+async def send_help(message: Message):
+    help_text = '''
+    Available commands:
+    /btc - get the current exchange rate of BTC
+    /help - get this help message
+    '''
+    await message.reply(help_text)
 
 
 # Function to handle the "/btc" command

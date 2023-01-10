@@ -13,6 +13,13 @@ bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
 
 
+@dp.message_handler(commands=["start"])
+async def start(message: Message):
+    text = 'Hello! Welcome to the BTC Exchange Rate Bot. ' \
+           'Use /help for information about available commands.'
+    await message.reply(text)
+
+
 @dp.message_handler(commands=["help"])
 async def send_help(message: Message):
     help_text = '''

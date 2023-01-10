@@ -10,3 +10,4 @@ This is a simple Telegram bot that allows users to check the current exchange ra
 * aiogram
 * requests
 check
+check 2

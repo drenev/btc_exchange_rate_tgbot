@@ -9,5 +9,3 @@ This is a simple Telegram bot that allows users to check the current exchange ra
 * Python 3.5 or higher
 * aiogram
 * requests
-check
-check 2
